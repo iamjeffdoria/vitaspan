@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google Analytics - VitaSpan -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6HD6F8HP4L"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-6HD6F8HP4L');
+</script>
+  <title>VitaSpan — AI Longevity Intelligence</title>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;500;600;700;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --bg:#ffffff;--bg2:#f4f7f9;--panel:#fcfdfe;--border:#dbe4eb;--border2:#cbdce6;
+      --cyan:#00a3b8;--cyan2:#008699;--green:#00a86b;--amber:#d97706;--red:#dc2626;
+      --text:#1e293b;--text2:#475569;--text3:#64748b;
+      --mono:'Share Tech Mono',monospace;--orb:'Orbitron',sans-serif;--raj:'Rajdhani',sans-serif;
+      --iphone-body:#1c1c1e;--iphone-border:#3a3a3c;--iphone-screen:#121212;
+      --iphone-text:#f5f5f7;--iphone-subtext:#a1a1a6;
+      --nav-h:64px;
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:var(--raj);background:var(--bg);color:var(--text);overflow-x:hidden;min-height:100vh}
+
+    /* ── NAV ── */
+    nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 3rem;height:var(--nav-h);background:rgba(255,255,255,0.96);border-bottom:1px solid var(--border);backdrop-filter:blur(20px)}
+    .logo{font-family:var(--orb);font-size:1.1rem;font-weight:700;letter-spacing:0.15em;color:var(--cyan);text-decoration:none;flex-shrink:0}
+    .logo span{color:var(--text)}
+    .nav-links{display:flex;gap:2.5rem;list-style:none}
+    .nav-links a{font-family:var(--mono);font-size:0.68rem;letter-spacing:0.12em;color:var(--text2);text-decoration:none;text-transform:uppercase;transition:color 0.2s}
+    .nav-links a:hover{color:var(--cyan)}
+    .nav-links a.nav-join{color:var(--cyan);border-bottom:1px solid rgba(0,163,184,0.35);padding-bottom:1px}
+    .nav-links a.nav-join:hover{color:var(--cyan2);border-color:var(--cyan2)}
+    .nav-cta{font-family:var(--mono);font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;background:transparent;color:var(--cyan);border:1px solid var(--cyan);padding:0.55rem 1.25rem;cursor:pointer;transition:all 0.2s;clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);flex-shrink:0}
+    .nav-cta:hover{background:var(--cyan);color:#fff}
+
+    /* HAMBURGER */
+    .nav-hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;width:40px;height:40px;background:none;border:1px solid var(--border);cursor:pointer;padding:8px;flex-shrink:0;transition:border-color 0.2s}
+    .nav-hamburger:hover{border-color:var(--cyan)}
+    .ham-line{display:block;width:100%;height:1.5px;background:var(--text);transition:all 0.3s ease;transform-origin:center}
+    .nav-hamburger.open .ham-line:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+    .nav-hamburger.open .ham-line:nth-child(2){opacity:0;transform:scaleX(0)}
+    .nav-hamburger.open .ham-line:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+
+    /* MOBILE DRAWER */
+    .mobile-menu{position:fixed;top:var(--nav-h);left:0;right:0;z-index:190;background:rgba(255,255,255,0.98);border-bottom:1px solid var(--border);backdrop-filter:blur(20px);transform:translateY(-110%);transition:transform 0.35s cubic-bezier(0.4,0,0.2,1);pointer-events:none}
+    .mobile-menu.open{transform:translateY(0);pointer-events:all}
+    .mobile-menu-inner{padding:1.5rem 1.5rem 2rem;display:flex;flex-direction:column;gap:0}
+    .mobile-nav-item{display:block;font-family:var(--mono);font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--text2);text-decoration:none;padding:1rem 0;border-bottom:1px solid var(--border);transition:color 0.2s}
+    .mobile-nav-item:hover{color:var(--cyan)}
+    .mobile-nav-item.join{color:var(--cyan)}
+    .mobile-menu-cta{margin-top:1.5rem;font-family:var(--mono);font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;background:var(--cyan);color:#fff;border:none;padding:0.9rem 1.5rem;cursor:pointer;width:100%;clip-path:polygon(10px 0%,100% 0%,calc(100% - 10px) 100%,0% 100%);transition:opacity 0.2s}
+    .mobile-menu-cta:hover{opacity:0.9}
+
+    /* HERO */
+    .hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:8rem 2rem 4rem;position:relative;overflow:hidden}
+    .hero-badge{display:inline-flex;align-items:center;gap:0.5rem;font-family:var(--mono);font-size:0.63rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--cyan);border:1px solid rgba(0,163,184,0.3);padding:0.3rem 1rem;margin-bottom:2rem;animation:fadeUp 0.8s ease both}
+    .hero-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--cyan);animation:blink 1.5s ease infinite;flex-shrink:0}
+    .hero h1{font-family:var(--orb);font-size:clamp(2rem,5.5vw,5rem);font-weight:900;line-height:1.05;letter-spacing:0.05em;text-transform:uppercase;animation:fadeUp 0.8s 0.1s ease both}
+    .hero h1 .line1{display:block;color:var(--text)}
+    .hero h1 .line2{display:block;color:var(--cyan)}
+    .hero-sub{font-family:var(--raj);font-size:1rem;font-weight:400;color:var(--text2);max-width:52ch;line-height:1.8;margin:1.5rem auto 2.5rem;letter-spacing:0.04em;animation:fadeUp 0.8s 0.2s ease both}
+    .hero-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;animation:fadeUp 0.8s 0.3s ease both}
+    .btn-primary{font-family:var(--mono);font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;background:var(--cyan);color:#fff;border:none;padding:0.85rem 2rem;cursor:pointer;clip-path:polygon(10px 0%,100% 0%,calc(100% - 10px) 100%,0% 100%);transition:all 0.2s}
+    .btn-primary:hover{transform:translateY(-2px);opacity:0.92}
+    .btn-outline{font-family:var(--mono);font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;background:transparent;color:var(--text);border:1px solid var(--border);padding:0.85rem 2rem;cursor:pointer;clip-path:polygon(10px 0%,100% 0%,calc(100% - 10px) 100%,0% 100%);transition:all 0.2s}
+    .btn-outline:hover{border-color:var(--cyan);color:var(--cyan)}
+    .hero-stats{display:flex;gap:3rem;justify-content:center;flex-wrap:wrap;margin-top:4rem;animation:fadeUp 0.8s 0.4s ease both}
+    .hero-stat{text-align:center}
+    .hero-stat-num{font-family:var(--orb);font-size:1.8rem;font-weight:700;color:var(--cyan);display:block}
+    .hero-stat-label{font-family:var(--mono);font-size:0.58rem;color:var(--text2);letter-spacing:0.12em;text-transform:uppercase}
+
+    /* SECTIONS */
+    .container{max-width:1100px;margin:0 auto}
+    .section-tag{font-family:var(--mono);font-size:0.62rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--cyan);display:flex;align-items:center;gap:0.5rem;margin-bottom:1rem}
+    .section-tag::before{content:'//'}
+    .section-title{font-family:var(--orb);font-size:clamp(1.4rem,3.5vw,2.8rem);font-weight:700;letter-spacing:0.05em;text-transform:uppercase;line-height:1.15;margin-bottom:1rem;color:var(--text)}
+    .section-title span{color:var(--cyan)}
+
+    .how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:3rem;background:var(--border)}
+    .how-card{background:var(--panel);padding:2.5rem 2rem;position:relative;transition:background 0.2s;overflow:hidden}
+    .how-card:hover{background:#f0f6fa}
+    .how-num{font-family:var(--mono);font-size:0.62rem;color:var(--cyan);letter-spacing:0.1em;margin-bottom:1.5rem;display:block}
+    .how-icon-wrap{width:48px;height:48px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:1.25rem;position:relative}
+    .how-icon-wrap::after{content:'';position:absolute;bottom:-1px;right:-1px;width:8px;height:8px;background:var(--cyan)}
+    .how-card h3{font-family:var(--orb);font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text);margin-bottom:0.6rem}
+    .how-card p{font-family:var(--raj);font-size:0.875rem;color:var(--text2);line-height:1.7;font-weight:400}
+
+    /* DEMO SECTION */
+    #demo-section{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:6rem 2rem}
+    .demo-layout{display:grid;grid-template-columns:1fr 380px;gap:5rem;align-items:center;max-width:1100px;margin:0 auto}
+    .demo-copy p{font-family:var(--raj);color:var(--text2);line-height:1.8;font-weight:400;margin-top:1rem;font-size:0.95rem;letter-spacing:0.03em}
+    .demo-features{margin-top:2rem;display:flex;flex-direction:column;gap:0.6rem}
+    .demo-feat{display:flex;align-items:center;gap:0.75rem;font-family:var(--mono);font-size:0.65rem;letter-spacing:0.08em;color:var(--text2)}
+    .demo-feat::before{content:'▸';color:var(--cyan)}
+
+    /* iPHONE */
+    .iphone-wrap{display:flex;justify-content:center;position:relative}
+    .iphone{width:280px;height:590px;background:var(--iphone-body);border-radius:42px;border:1.5px solid var(--iphone-border);box-shadow:0 0 0 1px #2c2c2e,0 25px 60px rgba(0,0,0,0.45),inset 0 -4px 8px rgba(0,0,0,0.6),inset 0 2px 3px rgba(255,255,255,0.08);position:relative;overflow:hidden;display:flex;flex-direction:column}
+    .iphone-notch{position:absolute;top:0;left:50%;transform:translateX(-50%);width:110px;height:28px;background:var(--iphone-body);border-radius:0 0 18px 18px;z-index:10;display:flex;align-items:center;justify-content:center;gap:6px;border-left:1.5px solid var(--iphone-border);border-right:1.5px solid var(--iphone-border);border-bottom:1.5px solid var(--iphone-border)}
+    .notch-cam{width:9px;height:9px;border-radius:50%;background:#48484a}
+    .notch-sensor{width:4px;height:4px;border-radius:50%;background:#636366}
+    .iphone-screen{flex:1;margin:9px;border-radius:40px;background:var(--iphone-screen);overflow:hidden;display:flex;flex-direction:column;position:relative;font-family:var(--mono);box-shadow:inset 0 0 0 1px rgba(0,0,0,0.06)}
+    .status-bar{display:flex;align-items:center;justify-content:space-between;padding:28px 14px 2px;font-size:0.45rem;color:#fff;flex-shrink:0}
+    .status-time{font-family:var(--orb);font-size:0.58rem;font-weight:700}
+    .status-icons{display:flex;gap:3px;align-items:center;font-size:0.48rem}
+    .app-header{padding:0.25rem 0.85rem 0.5rem;border-bottom:1px solid rgba(255,255,255,0.06);flex-shrink:0}
+    .app-header-logo{font-family:var(--orb);font-size:0.7rem;font-weight:700;color:var(--cyan);letter-spacing:0.12em}
+    .app-header-sub{font-family:var(--mono);font-size:0.44rem;color:var(--iphone-subtext);letter-spacing:0.09em;margin-top:1px}
+
+    /* TAB PANELS */
+    .tab-panel{display:none;flex:1;overflow-y:auto;overflow-x:hidden;padding:0.7rem 0.8rem 0.5rem;flex-direction:column;gap:0.55rem;color:var(--iphone-text)}
+    .tab-panel.active{display:flex}
+    .tab-panel::-webkit-scrollbar{width:2px}
+    .tab-panel::-webkit-scrollbar-thumb{background:#3a3a3c}
+
+    /* SCAN TAB */
+    .face-scan-widget{border:1px solid rgba(255,255,255,0.08);padding:0.7rem;border-radius:20px;background:rgba(255,255,255,0.03);position:relative}
+    .face-scan-widget::before{content:'BIOMETRIC SCAN';position:absolute;top:-7px;left:12px;font-size:0.42rem;letter-spacing:0.12em;color:var(--cyan);background:var(--iphone-screen);padding:0 4px}
+    .scan-area{width:82px;height:82px;border-radius:50%;border:1px solid rgba(255,255,255,0.08);position:relative;margin:0 auto 0.45rem;display:flex;align-items:center;justify-content:center;background:#18181a;overflow:hidden}
+    .scan-ring-a{position:absolute;inset:-2px;border-radius:50%;border:1px solid transparent;border-top-color:var(--cyan);border-right-color:var(--cyan);animation:spin 1.8s linear infinite}
+    .scan-ring-b{position:absolute;inset:6px;border-radius:50%;border:1px dashed rgba(0,163,184,0.25)}
+    .scan-ring-c{position:absolute;inset:13px;border-radius:50%;border:1px solid transparent;border-bottom-color:rgba(0,163,184,0.5);animation:spin 3s linear infinite reverse}
+    .scan-crosshair{position:absolute;inset:0;background:linear-gradient(rgba(0,163,184,0.15) 1px,transparent 1px) center/100% 10px,linear-gradient(90deg,rgba(0,163,184,0.15) 1px,transparent 1px) center/10px 100%;opacity:0.35}
+    .scan-face-img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+    .scan-label-row{display:flex;align-items:center;justify-content:center;gap:0.4rem;margin-bottom:0.35rem}
+    .scan-label{font-size:0.46rem;letter-spacing:0.12em;color:var(--cyan);text-transform:uppercase}
+    .scan-dot-live{width:5px;height:5px;border-radius:50%;background:var(--cyan);animation:blink 1.2s ease infinite;flex-shrink:0}
+    .scan-status{font-size:0.44rem;letter-spacing:0.07em;color:var(--iphone-subtext);text-align:center;min-height:1.1em}
+    .scanning-progress{font-family:var(--mono);font-size:0.44rem;letter-spacing:0.08em;color:var(--cyan);text-align:center;display:none;text-transform:uppercase;min-height:1.1em}
+    .metrics-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.45rem}
+    .metric-card{background:rgba(255,255,255,0.035);border:1px solid rgba(255,255,255,0.06);border-radius:16px;padding:0.55rem;position:relative;overflow:hidden;opacity:0;transform:translateY(5px);transition:all 0.35s ease}
+    .metric-card.visible{opacity:1;transform:translateY(0)}
+    .metric-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--cyan),transparent);transform:scaleX(0);transition:transform 0.8s ease}
+    .metric-card.visible::after{transform:scaleX(1)}
+    .metric-label{font-size:0.33rem;letter-spacing:0.08em;color:#8e8e93;text-transform:uppercase;margin-bottom:0.2rem}
+    .metric-val{font-family:var(--orb);font-size:0.78rem;font-weight:700;line-height:1}
+    .metric-val .unit{font-size:0.38rem;color:#8e8e93;font-weight:400;margin-left:2px}
+    .metric-bar{height:3px;border-radius:999px;background:rgba(255,255,255,0.06);margin-top:0.38rem;overflow:hidden}
+    .metric-bar-fill{height:100%;width:0;transition:width 1.2s cubic-bezier(0.4,0,0.2,1)}
+    .mc-cyan .metric-val{color:var(--cyan)}
+    .mc-green .metric-val{color:var(--green)}
+    .mc-amber .metric-val{color:var(--amber)}
+    .mc-purple .metric-val{color:#8b5cf6}
+    .app-section-label{font-size:0.4rem;letter-spacing:0.14em;color:#8e8e93;text-transform:uppercase;display:flex;align-items:center;gap:0.4rem;flex-shrink:0}
+    .app-section-label::after{content:'';flex:1;height:1px;background:#2a2a2e}
+
+    /* AI SUGGEST CARD */
+    .ai-suggest-card{background:rgba(0,163,184,0.05);border:1px solid rgba(0,163,184,0.2);border-radius:18px;padding:0.75rem;opacity:0;transform:translateY(6px);transition:all 0.4s ease;flex-shrink:0}
+    .ai-suggest-card.visible{opacity:1;transform:translateY(0)}
+    .ai-suggest-header{display:flex;align-items:center;gap:0.4rem;margin-bottom:0.5rem}
+    .ai-suggest-icon{width:18px;height:18px;background:linear-gradient(135deg,var(--cyan),#00c4d8);border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .ai-suggest-icon svg{width:10px;height:10px;fill:#fff}
+    .ai-suggest-title{font-size:0.42rem;letter-spacing:0.1em;color:var(--cyan);text-transform:uppercase}
+    .ai-suggest-intro{font-family:var(--raj);font-size:0.52rem;color:#9ca3af;line-height:1.45;margin-bottom:0.6rem}
+    .suggest-list{display:flex;flex-direction:column;gap:0.42rem}
+    .suggest-item{display:flex;gap:0.5rem;align-items:flex-start;opacity:0;transform:translateX(-6px);transition:all 0.3s ease}
+    .suggest-item.visible{opacity:1;transform:translateX(0)}
+    .suggest-badge{flex-shrink:0;font-size:0.32rem;letter-spacing:0.07em;text-transform:uppercase;padding:0.15rem 0.35rem;border-radius:999px;border:1px solid;margin-top:1px;white-space:nowrap}
+    .sb-cyan{border-color:rgba(0,163,184,0.5);color:var(--cyan);background:rgba(0,163,184,0.08)}
+    .sb-green{border-color:rgba(0,168,107,0.5);color:var(--green);background:rgba(0,168,107,0.08)}
+    .sb-amber{border-color:rgba(217,119,6,0.5);color:var(--amber);background:rgba(217,119,6,0.08)}
+    .suggest-text{font-family:var(--raj);font-size:0.52rem;color:#c8c8cc;line-height:1.4}
+
+    /* SCAN BUTTON */
+    .btn-row{padding:0 1.1rem 0.5rem;flex-shrink:0}
+    .app-scan-btn{font-family:var(--mono);font-size:0.52rem;letter-spacing:0.12em;text-transform:uppercase;background:linear-gradient(90deg,var(--cyan),#00c4d8);color:#fff;border:none;width:100%;padding:0.72rem 1rem;cursor:pointer;font-weight:700;border-radius:9999px;transition:all 0.3s ease;position:relative;overflow:hidden}
+    .app-scan-btn:hover{transform:translateY(-1px);opacity:0.95}
+    .app-scan-btn:disabled{background:#3a3a3e;color:#666;transform:none}
+
+    /* GLASS TABS */
+    .glass-tabs{display:flex;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);backdrop-filter:blur(20px);padding:4px;gap:3px;margin:0 1.1rem 0.6rem;border-radius:16px;flex-shrink:0}
+    .glass-tab{flex:1;padding:7px 4px;text-align:center;font-size:1.1rem;color:var(--iphone-subtext);border-radius:10px;transition:all 0.25s ease;display:flex;align-items:center;justify-content:center;height:38px;cursor:pointer}
+    .glass-tab.active{background:rgba(0,163,184,0.14);color:var(--cyan)}
+    .glass-tab:hover:not(.active){background:rgba(255,255,255,0.08);color:#e0e0e0}
+    .home-ind{height:20px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .home-bar{width:90px;height:3px;background:#3a3a3c;border-radius:2px}
+
+    /* HOME TAB */
+    .home-greeting{padding:0.3rem 0 0.2rem}
+    .home-greet-sub{font-family:var(--mono);font-size:0.38rem;color:#8e8e93;letter-spacing:0.1em;text-transform:uppercase}
+    .home-greet-name{font-family:var(--orb);font-size:0.82rem;font-weight:700;color:#fff;margin-top:2px}
+    .home-greet-name span{color:var(--cyan)}
+    .home-score-ring{display:flex;align-items:center;gap:0.8rem;background:rgba(0,163,184,0.06);border:1px solid rgba(0,163,184,0.18);border-radius:20px;padding:0.7rem 0.8rem}
+    .ring-wrap{position:relative;width:52px;height:52px;flex-shrink:0}
+    .ring-wrap svg{width:52px;height:52px;transform:rotate(-90deg)}
+    .ring-bg{fill:none;stroke:rgba(255,255,255,0.06);stroke-width:5}
+    .ring-fill{fill:none;stroke:var(--cyan);stroke-width:5;stroke-linecap:round;stroke-dasharray:138;stroke-dashoffset:138;transition:stroke-dashoffset 1.4s cubic-bezier(0.4,0,0.2,1)}
+    .ring-label{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+    .ring-num{font-family:var(--orb);font-size:0.68rem;font-weight:700;color:#fff;line-height:1}
+    .ring-unit{font-size:0.3rem;color:#8e8e93;letter-spacing:0.06em}
+    .ring-info-title{font-family:var(--orb);font-size:0.52rem;font-weight:600;color:#fff;letter-spacing:0.08em}
+    .ring-info-sub{font-family:var(--raj);font-size:0.5rem;font-weight:500;color:#9ca3af;margin-top:3px;line-height:1.4}
+    .home-quick-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.42rem}
+    .hq-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:14px;padding:0.55rem 0.6rem}
+    .hq-label{font-size:0.32rem;letter-spacing:0.08em;color:#8e8e93;text-transform:uppercase;margin-bottom:4px}
+    .hq-val{font-family:var(--orb);font-size:0.7rem;font-weight:700}
+    .hq-sub{font-family:var(--raj);font-size:0.42rem;font-weight:500;color:#9ca3af;margin-top:2px}
+    .hq-cyan{color:var(--cyan)}
+    .hq-green{color:var(--green)}
+    .hq-amber{color:var(--amber)}
+    .hq-purple{color:#8b5cf6}
+    .home-tip-card{background:rgba(0,168,107,0.05);border:1px solid rgba(0,168,107,0.2);border-radius:14px;padding:0.6rem 0.7rem}
+    .home-tip-head{font-size:0.36rem;letter-spacing:0.1em;color:var(--green);text-transform:uppercase;margin-bottom:4px}
+    .home-tip-body{font-family:var(--raj);font-size:0.52rem;font-weight:500;color:#c8c8cc;line-height:1.45}
+    .home-streak{display:flex;gap:0.3rem;align-items:center}
+    .streak-dot{width:20px;height:20px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:0.42rem;font-family:var(--mono)}
+    .streak-dot.done{background:rgba(0,163,184,0.2);color:var(--cyan);border:1px solid rgba(0,163,184,0.3)}
+    .streak-dot.miss{background:rgba(255,255,255,0.04);color:#4a4a4e;border:1px solid rgba(255,255,255,0.06)}
+    .streak-dot.today{background:rgba(0,163,184,0.35);color:#fff;border:1px solid var(--cyan)}
+    .home-activity{display:flex;flex-direction:column;gap:0.35rem}
+    .act-row{display:flex;align-items:center;gap:0.5rem;padding:0.4rem 0.5rem;background:rgba(255,255,255,0.025);border-radius:10px;border:1px solid rgba(255,255,255,0.04)}
+    .act-icon{width:22px;height:22px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:0.8rem;flex-shrink:0}
+    .act-icon.ic{background:rgba(0,163,184,0.15)}
+    .act-icon.ig{background:rgba(0,168,107,0.15)}
+    .act-icon.ia{background:rgba(217,119,6,0.15)}
+    .act-title{font-size:0.42rem;letter-spacing:0.05em;color:#e0e0e0;text-transform:uppercase}
+    .act-time{font-size:0.36rem;color:#8e8e93;margin-top:1px}
+    .act-badge{margin-left:auto;font-size:0.32rem;padding:0.12rem 0.3rem;border-radius:999px;text-transform:uppercase;letter-spacing:0.05em}
+    .ab-cyan{background:rgba(0,163,184,0.1);color:var(--cyan);border:1px solid rgba(0,163,184,0.3)}
+    .ab-green{background:rgba(0,168,107,0.1);color:var(--green);border:1px solid rgba(0,168,107,0.3)}
+    .ab-amber{background:rgba(217,119,6,0.1);color:var(--amber);border:1px solid rgba(217,119,6,0.3)}
+
+    /* HISTORY TAB */
+    .history-list{display:flex;flex-direction:column;gap:0.45rem}
+    .hist-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:16px;padding:0.65rem 0.7rem;cursor:pointer;transition:background 0.2s}
+    .hist-card:hover{background:rgba(255,255,255,0.055)}
+    .hist-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:0.45rem}
+    .hist-date{font-size:0.38rem;color:#8e8e93;letter-spacing:0.08em;text-transform:uppercase}
+    .hist-badge{font-size:0.32rem;padding:0.12rem 0.35rem;border-radius:999px;text-transform:uppercase;letter-spacing:0.06em}
+    .hb-better{background:rgba(0,168,107,0.1);color:var(--green);border:1px solid rgba(0,168,107,0.3)}
+    .hb-same{background:rgba(0,163,184,0.1);color:var(--cyan);border:1px solid rgba(0,163,184,0.3)}
+    .hb-worse{background:rgba(217,119,6,0.1);color:var(--amber);border:1px solid rgba(217,119,6,0.3)}
+    .hist-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:0.3rem}
+    .hist-met{text-align:center}
+    .hist-met-val{font-family:var(--orb);font-size:0.62rem;font-weight:700}
+    .hist-met-lbl{font-size:0.3rem;letter-spacing:0.06em;color:#8e8e93;text-transform:uppercase;margin-top:1px}
+    .hist-delta{display:flex;align-items:center;justify-content:flex-end;gap:0.25rem;margin-top:0.4rem;padding-top:0.4rem;border-top:1px solid rgba(255,255,255,0.05)}
+    .hist-delta-txt{font-size:0.36rem;color:#8e8e93;letter-spacing:0.06em}
+    .hist-delta-val{font-family:var(--mono);font-size:0.36rem}
+    .hdv-up{color:var(--green)}
+    .hdv-down{color:var(--red)}
+    .hist-chart-wrap{background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.06);border-radius:14px;padding:0.6rem 0.7rem}
+    .hist-chart-title{font-size:0.38rem;letter-spacing:0.1em;color:#8e8e93;text-transform:uppercase;margin-bottom:0.5rem}
+    .mini-chart{width:100%;height:36px;position:relative;display:flex;align-items:flex-end;gap:3px}
+    .mini-bar{flex:1;border-radius:3px 3px 0 0;transition:height 0.6s ease;position:relative}
+
+    /* PROFILE TAB */
+    .profile-header{display:flex;align-items:center;gap:0.7rem;padding:0.3rem 0}
+    .profile-avatar{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,rgba(0,163,184,0.3),rgba(0,168,107,0.2));border:1.5px solid rgba(0,163,184,0.4);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;overflow:hidden}
+    .profile-avatar img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+    .profile-name{font-family:var(--orb);font-size:0.7rem;font-weight:700;color:#fff;letter-spacing:0.06em}
+    .profile-handle{font-size:0.36rem;color:#8e8e93;letter-spacing:0.06em;margin-top:2px}
+    .profile-edit-btn{margin-left:auto;font-family:var(--mono);font-size:0.34rem;letter-spacing:0.08em;text-transform:uppercase;background:transparent;color:var(--cyan);border:1px solid rgba(0,163,184,0.4);padding:0.25rem 0.5rem;border-radius:6px;cursor:pointer}
+    .profile-stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:0.4rem}
+    .pstat{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:0.5rem;text-align:center}
+    .pstat-num{font-family:var(--orb);font-size:0.72rem;font-weight:700;color:var(--cyan)}
+    .pstat-lbl{font-size:0.3rem;letter-spacing:0.07em;color:#8e8e93;text-transform:uppercase;margin-top:2px}
+    .profile-section-title{font-size:0.38rem;letter-spacing:0.12em;color:#8e8e93;text-transform:uppercase;display:flex;align-items:center;gap:0.4rem}
+    .profile-section-title::after{content:'';flex:1;height:1px;background:#2a2a2e}
+    .profile-info-list{display:flex;flex-direction:column;gap:0.32rem}
+    .pinfo-row{display:flex;align-items:center;justify-content:space-between;padding:0.45rem 0.5rem;background:rgba(255,255,255,0.025);border-radius:10px;border:1px solid rgba(255,255,255,0.04)}
+    .pinfo-lbl{font-size:0.36rem;letter-spacing:0.06em;color:#9ca3af;text-transform:uppercase}
+    .pinfo-val{font-family:var(--raj);font-size:0.52rem;color:#e0e0e0;font-weight:600}
+    .profile-goals{display:flex;flex-direction:column;gap:0.32rem}
+    .goal-row{background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.04);border-radius:10px;padding:0.45rem 0.55rem}
+    .goal-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:5px}
+    .goal-name{font-size:0.38rem;letter-spacing:0.06em;color:#e0e0e0;text-transform:uppercase}
+    .goal-pct{font-family:var(--orb);font-size:0.38rem;font-weight:700}
+    .goal-bar-track{height:3px;border-radius:999px;background:rgba(255,255,255,0.06);overflow:hidden}
+    .goal-bar-fill{height:100%;border-radius:999px}
+
+    /* FEATURES */
+    .features-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border);margin-top:3rem}
+    .feat-card{background:var(--panel);padding:2.5rem;position:relative;overflow:hidden;transition:background 0.2s}
+    .feat-card:hover{background:#f0f6fa}
+    .feat-card::before{content:attr(data-num);position:absolute;right:1.5rem;top:1.5rem;font-family:var(--orb);font-size:3rem;font-weight:900;color:rgba(0,163,184,0.04);pointer-events:none}
+    .feat-icon{font-size:1.5rem;margin-bottom:1rem;display:block}
+    .feat-card h3{font-family:var(--orb);font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text);margin-bottom:0.6rem}
+    .feat-card p{font-family:var(--raj);font-size:0.875rem;color:var(--text2);line-height:1.7;font-weight:400}
+
+    /* CTA */
+    .cta-section{background:var(--panel);border:1px solid var(--border);margin:0 2rem;padding:5rem 2rem;text-align:center;position:relative;overflow:hidden}
+    .cta-section .section-tag{justify-content:center}
+    .cta-section p{font-family:var(--raj);color:var(--text2);max-width:44ch;margin:1rem auto 2.5rem;line-height:1.8;font-weight:400}
+    .cta-form{display:flex;gap:0.5rem;justify-content:center;max-width:420px;margin:0 auto;flex-wrap:wrap}
+    .cta-input{flex:1;min-width:180px;padding:0.75rem 1.25rem;background:rgba(0,163,184,0.04);border:1px solid var(--border);color:var(--text);font-family:var(--mono);font-size:0.68rem;letter-spacing:0.05em;outline:none;transition:border-color 0.2s}
+    .cta-input::placeholder{color:var(--text2)}
+    .cta-input:focus{border-color:var(--cyan)}
+    .cta-btn{font-family:var(--mono);font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;background:var(--cyan);color:#fff;border:none;padding:0.75rem 1.5rem;cursor:pointer;font-weight:700;white-space:nowrap;clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);transition:all 0.2s}
+    .cta-btn:hover{opacity:0.92}
+    .cta-fine{font-family:var(--mono);font-size:0.52rem;color:var(--text2);margin-top:1rem;letter-spacing:0.06em}
+
+    /* FOOTER */
+    footer{padding:2rem 3rem;display:flex;align-items:center;justify-content:center;border-top:1px solid var(--border)}
+    .footer-copy{font-family:var(--mono);font-size:0.58rem;color:var(--text2);letter-spacing:0.06em}
+
+    @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    @keyframes blink{0%,100%{opacity:1}50%{opacity:0.2}}
+    .reveal{opacity:0;transform:translateY(16px);transition:opacity 0.6s ease,transform 0.6s ease}
+    .reveal.vis{opacity:1;transform:translateY(0)}
+    /* ── PRICING SECTION ── */
+    #pricing-section {
+      padding: 6rem 2rem;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+    }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .pricing-card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      padding: 3rem 2rem;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.3s ease;
+      overflow: hidden;
+    }
+    .pricing-card.premium-tier {
+      border-color: var(--cyan);
+      box-shadow: 0 10px 30px rgba(0, 163, 184, 0.05);
+    }
+    .pricing-card.premium-tier::before {
+      content: 'RECOMMENDED';
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-family: var(--mono);
+      font-size: 0.55rem;
+      letter-spacing: 0.1em;
+      color: var(--cyan);
+      border: 1px solid rgba(0, 163, 184, 0.3);
+      padding: 0.2rem 0.6rem;
+    }
+    .pricing-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--cyan);
+    }
+    .tier-name {
+      font-family: var(--orb);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text3);
+      margin-bottom: 0.5rem;
+    }
+    .pricing-card.premium-tier .tier-name {
+      color: var(--cyan);
+    }
+    .tier-price {
+      font-family: var(--orb);
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: var(--text);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: baseline;
+    }
+    .tier-price span {
+      font-family: var(--raj);
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text2);
+      margin-left: 0.25rem;
+    }
+    .tier-features {
+      list-style: none;
+      margin-bottom: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .tier-features li {
+      font-family: var(--raj);
+      font-size: 0.95rem;
+      color: var(--text2);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .tier-features li i {
+      color: var(--cyan);
+      font-size: 0.85rem;
+    }
+    .pricing-btn {
+      width: 100%;
+      text-align: center;
+    }
+
+    @media(max-width: 900px) {
+      .pricing-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+    /* ── TABLET 900px ── */
+    @media(max-width:900px){
+      nav{padding:0 1.5rem}
+      .nav-links{display:none}
+      .nav-cta{display:none}
+      .nav-hamburger{display:flex}
+
+      .demo-layout{grid-template-columns:1fr;gap:3rem}
+      .demo-copy{text-align:center}
+      .demo-features{align-items:center}
+      .how-grid{grid-template-columns:1fr}
+      .features-grid{grid-template-columns:1fr}
+
+      .hero-stats{gap:1.5rem}
+      footer{flex-direction:column;gap:1rem;text-align:center}
+      .cta-section{margin:0 1rem}
+    }
+
+    /* ── MOBILE 600px ── */
+    @media(max-width:600px){
+      .hero{padding:7rem 1.25rem 3rem}
+      .hero-sub{font-size:0.9rem}
+      .hero-actions{flex-direction:column;align-items:center}
+      .btn-primary,.btn-outline{width:100%;max-width:300px;text-align:center}
+      .hero-stats{gap:1rem;padding:0 0.5rem}
+      .hero-stat-num{font-size:1.4rem}
+
+      #how{padding:4rem 1.25rem !important}
+      #demo-section{padding:4rem 1.25rem !important}
+      #features{padding:4rem 1.25rem !important}
+      #join{padding:3rem 0 !important}
+
+      .cta-section{margin:0 0.75rem;padding:3rem 1.25rem}
+      .cta-form{flex-direction:column;align-items:stretch}
+      .cta-input{min-width:0;width:100%}
+      .cta-btn{clip-path:none;width:100%}
+
+      footer{padding:1.5rem 1.25rem}
+
+      .iphone{width:260px;height:548px}
+
+      .section-title{word-break:break-word}
+    }
+
+    /* ── VERY SMALL 380px ── */
+    @media(max-width:380px){
+      .hero-stats{grid-template-columns:1fr 1fr;display:grid;gap:1rem;width:100%}
+      .hero-stat-num{font-size:1.3rem}
+      .iphone{width:240px;height:510px}
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="logo" href="#">VITA<span>SPAN</span></a>
+    <ul class="nav-links">
+      <li><a href="#how">PROTOCOL</a></li>
+      <li><a href="#demo-section">DEMO</a></li>
+      <li><a href="#pricing-section">PRICING</a></li>
+      <li><a href="#features">SYSTEMS</a></li>
+      <li><a href="#join" class="nav-join">JOIN THE LONGEVITY NETWORK</a></li>
+    </ul>
+    <button class="nav-cta" onclick="document.getElementById('demo-section').scrollIntoView({behavior:'smooth'})">SCAN NOW</button>
+    <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu" onclick="toggleMenu()">
+      <span class="ham-line"></span>
+      <span class="ham-line"></span>
+      <span class="ham-line"></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE DRAWER -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-inner">
+      <a class="mobile-nav-item" href="#how" onclick="closeMenu()">// PROTOCOL</a>
+      <a class="mobile-nav-item" href="#demo-section" onclick="closeMenu()">// DEMO</a>
+      <a class="mobile-nav-item" href="#pricing-section" onclick="closeMenu()">// PRICING</a>
+      <a class="mobile-nav-item" href="#features" onclick="closeMenu()">// SYSTEMS</a>
+      <a class="mobile-nav-item join" href="#join" onclick="closeMenu()">// JOIN THE LONGEVITY NETWORK</a>
+      <button class="mobile-menu-cta" onclick="closeMenu();document.getElementById('demo-section').scrollIntoView({behavior:'smooth'})">INITIATE SCAN NOW</button>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-badge">NEURAL LONGEVITY ENGINE v2.4</div>
+    <h1><span class="line1">DECODE YOUR</span><span class="line2">BIOLOGICAL AGE</span></h1>
+    <p class="hero-sub">VitaSpan's neural scanning engine reads 48 epigenetic biomarkers from your face. Instant lifespan projection. Full longevity protocol. Zero lab work required.</p>
+    <div class="hero-actions">
+      <button class="btn-primary" onclick="document.getElementById('demo-section').scrollIntoView({behavior:'smooth'})">RUN SCAN</button>
+      <button class="btn-outline" onclick="document.getElementById('how').scrollIntoView({behavior:'smooth'})">HOW IT WORKS</button>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><span class="hero-stat-num">94.7%</span><span class="hero-stat-label">Accuracy</span></div>
+      <div class="hero-stat"><span class="hero-stat-num">48</span><span class="hero-stat-label">Biomarkers</span></div>
+      <div class="hero-stat"><span class="hero-stat-num">+12YR</span><span class="hero-stat-label">Avg Gain</span></div>
+      <div class="hero-stat"><span class="hero-stat-num">2M+</span><span class="hero-stat-label">Records Trained</span></div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how" style="padding:6rem 2rem;border-top:1px solid var(--border)">
+    <div class="container">
+      <div class="section-tag">THE METHOD</div>
+      <h2 class="section-title">THREE STEPS TO<br><span>KNOW YOUR BIOLOGY</span></h2>
+      <div class="how-grid">
+        <div class="how-card reveal">
+          <span class="how-num">// 01</span>
+          <div class="how-icon-wrap">1</div>
+          <h3>Facial Capture</h3>
+          <p>Upload or capture a photo. Our CV model maps 48 epigenetic markers across skin texture, vascular density, periocular patterns and micro-muscle inflammation.</p>
+        </div>
+        <div class="how-card reveal">
+          <span class="how-num">// 02</span>
+          <div class="how-icon-wrap">2</div>
+          <h3>AI Analysis</h3>
+          <p>Trained on 2M+ longitudinal health records, VitaSpan calculates biological age, risk profile, and projected lifespan percentile in under 4 seconds.</p>
+        </div>
+        <div class="how-card reveal">
+          <span class="how-num">// 03</span>
+          <div class="how-icon-wrap">3</div>
+          <h3>Your Protocol</h3>
+          <p>Receive a precision longevity stack: nutrition macros, fasting windows, sleep staging, exercise zones, and supplement schedule — all calibrated to your scan.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEMO -->
+  <section id="demo-section" style="background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:6rem 2rem">
+    <div class="demo-layout">
+      <div class="demo-copy">
+        <div class="section-tag">LIVE DEMO</div>
+        <h2 class="section-title">EXPERIENCE<br><span>THE SCAN</span></h2>
+        <p>See VitaSpan's neural engine work in real time. Tap the scan button on the phone to initiate the biometric scan sequence and receive a full longevity analysis.</p>
+        <div class="demo-features">
+          <div class="demo-feat">BIOLOGICAL AGE CALCULATION</div>
+          <div class="demo-feat">PROJECTED LIFESPAN ESTIMATE</div>
+          <div class="demo-feat">CELLULAR HEALTH INDEX</div>
+          <div class="demo-feat">LONGEVITY SCORE / 100</div>
+          <div class="demo-feat">AI LIFESTYLE SUGGESTIONS</div>
+          <div class="demo-feat">HISTORY AND PROGRESS TRACKING</div>
+        </div>
+      </div>
+      <!-- iPHONE -->
+      <div class="iphone-wrap">
+        <div class="iphone">
+          <div class="iphone-notch">
+            <div class="notch-sensor"></div>
+            <div class="notch-cam"></div>
+          </div>
+          <div class="iphone-screen">
+            <div class="status-bar">
+              <span class="status-time">9:41</span>
+              <div class="status-icons"><span>|||</span><span> WiFi </span><span>|+|</span></div>
+            </div>
+            <div class="app-header">
+              <div class="app-header-logo">VITASPAN</div>
+              <div class="app-header-sub">// LONGEVITY INTELLIGENCE SYSTEM v2.4</div>
+            </div>
+
+            <!-- HOME TAB -->
+            <div class="tab-panel" id="tab-home">
+              <div class="home-greeting">
+                <div class="home-greet-sub">// GOOD MORNING</div>
+                <div class="home-greet-name">ALEX <span>MERCER</span></div>
+              </div>
+              <div class="home-score-ring">
+                <div class="ring-wrap">
+                  <svg viewBox="0 0 52 52"><circle class="ring-bg" cx="26" cy="26" r="22"/><circle class="ring-fill" id="homeRingFill" cx="26" cy="26" r="22"/></svg>
+                  <div class="ring-label"><span class="ring-num" id="homeRingNum">--</span><span class="ring-unit">SCORE</span></div>
+                </div>
+                <div>
+                  <div class="ring-info-title">LONGEVITY INDEX</div>
+                  <div class="ring-info-sub">Last scan: 3 days ago<br>Bio age: <span style="color:var(--cyan)">31 YRS</span> vs 34 chron.</div>
+                </div>
+              </div>
+              <div class="app-section-label">QUICK STATS</div>
+              <div class="home-quick-grid">
+                <div class="hq-card"><div class="hq-label">BIO AGE</div><div class="hq-val hq-cyan">31 <span style="font-size:0.4rem;color:#8e8e93">YRS</span></div><div class="hq-sub">-3 vs chronological</div></div>
+                <div class="hq-card"><div class="hq-label">LIFESPAN PROJ.</div><div class="hq-val hq-green">89 <span style="font-size:0.4rem;color:#8e8e93">YRS</span></div><div class="hq-sub">Top 28th percentile</div></div>
+                <div class="hq-card"><div class="hq-label">CELL HEALTH</div><div class="hq-val hq-purple">74 <span style="font-size:0.4rem;color:#8e8e93">%ILE</span></div><div class="hq-sub">Above average</div></div>
+                <div class="hq-card"><div class="hq-label">TOTAL SCANS</div><div class="hq-val hq-amber">12</div><div class="hq-sub">Since Jan 2025</div></div>
+              </div>
+              <div class="app-section-label">WEEKLY STREAK</div>
+              <div class="home-streak">
+                <div class="streak-dot done">M</div>
+                <div class="streak-dot done">T</div>
+                <div class="streak-dot done">W</div>
+                <div class="streak-dot done">T</div>
+                <div class="streak-dot today">F</div>
+                <div class="streak-dot miss">S</div>
+                <div class="streak-dot miss">S</div>
+                <div style="margin-left:auto;font-size:0.36rem;color:var(--cyan);letter-spacing:0.06em">4 DAY STREAK</div>
+              </div>
+              <div class="app-section-label">TODAYS TIP</div>
+              <div class="home-tip-card">
+                <div class="home-tip-head">AI RECOMMENDATION</div>
+                <div class="home-tip-body">Your vascular markers improve 18% with morning Zone 2 cardio before breakfast. Try a 20-min fasted walk today.</div>
+              </div>
+              <div class="app-section-label">RECENT ACTIVITY</div>
+              <div class="home-activity">
+                <div class="act-row">
+                  <div class="act-icon ic"><i class="bi bi-camera" style="font-size:0.7rem;color:var(--cyan)"></i></div>
+                  <div><div class="act-title">BIOMETRIC SCAN</div><div class="act-time">3 days ago</div></div>
+                  <div class="act-badge ab-cyan">DONE</div>
+                </div>
+                <div class="act-row">
+                  <div class="act-icon ig"><i class="bi bi-lightning" style="font-size:0.7rem;color:var(--green)"></i></div>
+                  <div><div class="act-title">PROTOCOL UPDATED</div><div class="act-time">5 days ago</div></div>
+                  <div class="act-badge ab-green">NEW</div>
+                </div>
+                <div class="act-row">
+                  <div class="act-icon ia"><i class="bi bi-graph-up" style="font-size:0.7rem;color:var(--amber)"></i></div>
+                  <div><div class="act-title">BIO AGE IMPROVED</div><div class="act-time">1 week ago</div></div>
+                  <div class="act-badge ab-amber">-0.4 YR</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- SCAN TAB -->
+            <div class="tab-panel active" id="tab-scan">
+              <div class="face-scan-widget">
+                <div class="scan-area" id="scanArea">
+                  <div class="scan-crosshair"></div>
+                  <div class="scan-ring-a"></div>
+                  <div class="scan-ring-b"></div>
+                  <div class="scan-ring-c"></div>
+                  <img id="mockFace" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face" class="scan-face-img" alt="Face Scan">
+                </div>
+                <div class="scan-label-row">
+                  <div class="scan-dot-live"></div>
+                  <div class="scan-label" id="scanLabel">AWAITING INPUT</div>
+                </div>
+                <div class="scan-status" id="scanStatus">TAP BUTTON BELOW TO INITIATE</div>
+                <div class="scanning-progress" id="scanProgress"></div>
+              </div>
+              <div class="app-section-label">BIOMETRIC RESULTS</div>
+              <div class="metrics-grid">
+                <div class="metric-card mc-cyan" id="mc1">
+                  <div class="metric-label">BIOLOGICAL AGE</div>
+                  <div class="metric-val" id="mvBioAge">--<span class="unit">YRS</span></div>
+                  <div class="metric-bar"><div class="metric-bar-fill" id="mb1" style="background:var(--cyan)"></div></div>
+                </div>
+                <div class="metric-card mc-green" id="mc2">
+                  <div class="metric-label">LIFESPAN PROJ.</div>
+                  <div class="metric-val" id="mvLifespan">--<span class="unit">YRS</span></div>
+                  <div class="metric-bar"><div class="metric-bar-fill" id="mb2" style="background:var(--green)"></div></div>
+                </div>
+                <div class="metric-card mc-amber" id="mc3">
+                  <div class="metric-label">LONGEVITY SCORE</div>
+                  <div class="metric-val" id="mvScore">--<span class="unit">/100</span></div>
+                  <div class="metric-bar"><div class="metric-bar-fill" id="mb3" style="background:var(--amber)"></div></div>
+                </div>
+                <div class="metric-card mc-purple" id="mc4">
+                  <div class="metric-label">CELL HEALTH IDX</div>
+                  <div class="metric-val" id="mvCell">--<span class="unit">%ILE</span></div>
+                  <div class="metric-bar"><div class="metric-bar-fill" id="mb4" style="background:#8b5cf6"></div></div>
+                </div>
+              </div>
+              <div class="app-section-label" id="aiSuggestLabel" style="display:none">AI LIFESTYLE SUGGESTIONS</div>
+              <div class="ai-suggest-card" id="aiSuggestCard">
+                <div class="ai-suggest-header">
+                  <div class="ai-suggest-icon">
+                    <svg viewBox="0 0 12 12"><path d="M6 1l1.2 2.4L10 4.5 7.6 6.8l.6 3.2L6 8.7l-2.2 1.3.6-3.2L2 4.5l2.8-.1z"/></svg>
+                  </div>
+                  <div class="ai-suggest-title">VITASPAN NEURAL ANALYSIS</div>
+                </div>
+                <div class="ai-suggest-intro" id="aiIntro">Run a scan to receive personalized lifestyle suggestions.</div>
+                <div class="suggest-list" id="suggestList"></div>
+              </div>
+            </div>
+
+            <!-- HISTORY TAB -->
+            <div class="tab-panel" id="tab-history">
+              <div class="app-section-label">SCORE TREND</div>
+              <div class="hist-chart-wrap">
+                <div class="hist-chart-title">LONGEVITY SCORE - LAST 6 SCANS</div>
+                <div class="mini-chart" id="miniChart"></div>
+                <div style="display:flex;justify-content:space-between;margin-top:14px">
+                  <span style="font-size:0.3rem;color:#8e8e93;letter-spacing:0.06em">JAN</span>
+                  <span style="font-size:0.3rem;color:#8e8e93;letter-spacing:0.06em">FEB</span>
+                  <span style="font-size:0.3rem;color:#8e8e93;letter-spacing:0.06em">MAR</span>
+                  <span style="font-size:0.3rem;color:#8e8e93;letter-spacing:0.06em">APR</span>
+                  <span style="font-size:0.3rem;color:#8e8e93;letter-spacing:0.06em">MAY</span>
+                  <span style="font-size:0.3rem;color:#8e8e93;letter-spacing:0.06em">JUN</span>
+                </div>
+              </div>
+              <div class="app-section-label">SCAN HISTORY</div>
+              <div class="history-list">
+                <div class="hist-card">
+                  <div class="hist-top"><span class="hist-date">MAY 15, 2025</span><span class="hist-badge hb-better">IMPROVED</span></div>
+                  <div class="hist-metrics">
+                    <div class="hist-met"><div class="hist-met-val" style="color:var(--cyan)">31</div><div class="hist-met-lbl">BIO AGE</div></div>
+                    <div class="hist-met"><div class="hist-met-val" style="color:var(--green)">89</div><div class="hist-met-lbl">LIFESPAN</div></div>
+                    <div class="hist-met"><div class="hist-met-val" style="color:var(--amber)">78</div><div class="hist-met-lbl">SCORE</div></div>
+                  </div>
+                  <div class="hist-delta"><span class="hist-delta-txt">VS PREV SCAN</span><span class="hist-delta-val hdv-up">+2.1 SCORE</span></div>
+                </div>
+                <div class="hist-card">
+                  <div class="hist-top"><span class="hist-date">APR 28, 2025</span><span class="hist-badge hb-same">STABLE</span></div>
+                  <div class="hist-metrics">
+                    <div class="hist-met"><div class="hist-met-val" style="color:var(--cyan)">32</div><div class="hist-met-lbl">BIO AGE</div></div>
+                    <div class="hist-met"><div class="hist-met-val" style="color:var(--green)">88</div><div class="hist-met-lbl">LIFESPAN</div></div>
+                    <div class="hist-met"><div class="hist-met-val" style="color:var(--amber)">75</div><div class="hist-met-lbl">SCORE</div></div>
+                  </div>
+                  <div class="hist-delta"><span class="hist-delta-txt">VS PREV SCAN</span><span class="hist-delta-val hdv-up">+0.3 SCORE</span></div>
+                </div>
+                <div class="hist-card">
+                  <div class="hist-top"><span class="hist-date">APR 03, 2025</span><span class="hist-badge hb-worse">DECLINED</span></div>
+                  <div class="hist-metrics">
+                    <div class="hist-met"><div class="hist-met-val" style="color:var(--cyan)">33</div><div class="hist-met-lbl">BIO AGE</div></div>
+                    <div class="hist-met"><div class="hist-met-val" style="color:var(--green)">87</div><div class="hist-met-lbl">LIFESPAN</div></div>
+                    <div class="hist-met"><div class="hist-met-val" style="color:var(--amber)">74</div><div class="hist-met-lbl">SCORE</div></div>
+                  </div>
+                  <div class="hist-delta"><span class="hist-delta-txt">VS PREV SCAN</span><span class="hist-delta-val hdv-down">-1.2 SCORE</span></div>
+                </div>
+                <div class="hist-card">
+                  <div class="hist-top"><span class="hist-date">MAR 10, 2025</span><span class="hist-badge hb-better">IMPROVED</span></div>
+                  <div class="hist-metrics">
+                    <div class="hist-met"><div class="hist-met-val" style="color:var(--cyan)">33</div><div class="hist-met-lbl">BIO AGE</div></div>
+                    <div class="hist-met"><div class="hist-met-val" style="color:var(--green)">87</div><div class="hist-met-lbl">LIFESPAN</div></div>
+                    <div class="hist-met"><div class="hist-met-val" style="color:var(--amber)">75</div><div class="hist-met-lbl">SCORE</div></div>
+                  </div>
+                  <div class="hist-delta"><span class="hist-delta-txt">VS PREV SCAN</span><span class="hist-delta-val hdv-up">+3.4 SCORE</span></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- PROFILE TAB -->
+            <div class="tab-panel" id="tab-profile">
+              <div class="profile-header">
+                <div class="profile-avatar">
+                  <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face" alt="Profile">
+                </div>
+                <div>
+                  <div class="profile-name">ALEX MERCER</div>
+                  <div class="profile-handle">@alex.mercer // VITASPAN PRO</div>
+                </div>
+                <button class="profile-edit-btn">EDIT</button>
+              </div>
+              <div class="profile-stats-row">
+                <div class="pstat"><div class="pstat-num">12</div><div class="pstat-lbl">SCANS</div></div>
+                <div class="pstat"><div class="pstat-num" style="color:var(--green)">-3</div><div class="pstat-lbl">YRS GAINED</div></div>
+                <div class="pstat"><div class="pstat-num" style="color:var(--amber)">78</div><div class="pstat-lbl">TOP SCORE</div></div>
+              </div>
+              <div class="profile-section-title">BIO DATA</div>
+              <div class="profile-info-list">
+                <div class="pinfo-row"><span class="pinfo-lbl">CHRON. AGE</span><span class="pinfo-val">34 Years</span></div>
+                <div class="pinfo-row"><span class="pinfo-lbl">BIOLOGICAL AGE</span><span class="pinfo-val" style="color:var(--cyan)">31 Years</span></div>
+                <div class="pinfo-row"><span class="pinfo-lbl">HEIGHT</span><span class="pinfo-val">5 ft 11 in</span></div>
+                <div class="pinfo-row"><span class="pinfo-lbl">WEIGHT</span><span class="pinfo-val">178 lbs</span></div>
+                <div class="pinfo-row"><span class="pinfo-lbl">MEMBER SINCE</span><span class="pinfo-val">Jan 2025</span></div>
+              </div>
+              <div class="profile-section-title">ACTIVE GOALS</div>
+              <div class="profile-goals">
+                <div class="goal-row">
+                  <div class="goal-top"><span class="goal-name">REDUCE BIO AGE TO 29</span><span class="goal-pct" style="color:var(--cyan)">40%</span></div>
+                  <div class="goal-bar-track"><div class="goal-bar-fill" style="width:40%;background:var(--cyan)"></div></div>
+                </div>
+                <div class="goal-row">
+                  <div class="goal-top"><span class="goal-name">LONGEVITY SCORE 85+</span><span class="goal-pct" style="color:var(--amber)">92%</span></div>
+                  <div class="goal-bar-track"><div class="goal-bar-fill" style="width:92%;background:var(--amber)"></div></div>
+                </div>
+                <div class="goal-row">
+                  <div class="goal-top"><span class="goal-name">12 CONSECUTIVE SCANS</span><span class="goal-pct" style="color:var(--green)">100%</span></div>
+                  <div class="goal-bar-track"><div class="goal-bar-fill" style="width:100%;background:var(--green)"></div></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- SCAN BUTTON + TABS -->
+            <div class="btn-row" id="scanBtnRow">
+              <button class="app-scan-btn" id="scanBtn" onclick="runScan()">INITIATE BIOMETRIC SCAN</button>
+            </div>
+            <div class="glass-tabs">
+              <div class="glass-tab" id="tab-btn-home" onclick="switchTab('home')" title="Home"><i class="bi bi-house-door"></i></div>
+              <div class="glass-tab active" id="tab-btn-scan" onclick="switchTab('scan')" title="Scan"><i class="bi bi-camera"></i></div>
+              <div class="glass-tab" id="tab-btn-history" onclick="switchTab('history')" title="History"><i class="bi bi-clock-history"></i></div>
+              <div class="glass-tab" id="tab-btn-profile" onclick="switchTab('profile')" title="Profile"><i class="bi bi-person"></i></div>
+            </div>
+            <div class="home-ind"><div class="home-bar"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+        <!-- PRICING SECTION -->
+  <section id="pricing-section">
+    <div class="container">
+      <div class="section-tag">Network Access</div>
+      <h2 class="section-title">Select Your <span>Longevity Tier</span></h2>
+      
+      <div class="pricing-grid">
+        <!-- Tier 1 -->
+        <div class="pricing-card reveal" data-tier="baseline">
+          <div>
+            <div class="tier-name">Baseline</div>
+            <div class="tier-price">$0<span>/forever</span></div>
+            <ul class="tier-features">
+              <li><i class="bi bi-check2"></i> Basic Biometric Face Scan</li>
+              <li><i class="bi bi-check2"></i> Daily Longevity Score</li>
+              <li><i class="bi bi-check2"></i> Static Health History Tracker</li>
+            </ul>
+          </div>
+          <button class="btn-outline pricing-btn" data-track="tier-baseline">Initialize Free Account</button>
+        </div>
+
+        <!-- Tier 2 -->
+        <div class="pricing-card premium-tier reveal" data-tier="pro">
+          <div>
+            <div class="tier-name">Vita Pro</div>
+            <div class="tier-price">$29<span>/month</span></div>
+            <ul class="tier-features">
+              <li><i class="bi bi-check2"></i> Continuous AI Health Diagnostics</li>
+              <li><i class="bi bi-check2"></i> Hyper-Personalized Protocols</li>
+              <li><i class="bi bi-check2"></i> Real-Time Biomarker Tracking</li>
+              <li><i class="bi bi-check2"></i> Priority Longevity Network Access</li>
+            </ul>
+          </div>
+          <button class="btn-primary pricing-btn" data-track="tier-pro">Upgrade to Pro</button>
+        </div>
+
+        <!-- Tier 3 -->
+        <div class="pricing-card reveal" data-tier="quantum">
+          <div>
+            <div class="tier-name">Quantum</div>
+            <div class="tier-price">$149<span>/month</span></div>
+            <ul class="tier-features">
+              <li><i class="bi bi-check2"></i> All Pro Tier Features</li>
+              <li><i class="bi bi-check2"></i> DNA & Epigenetic Clock Syncing</li>
+              <li><i class="bi bi-check2"></i> Dedicated AI Health Concierge</li>
+              <li><i class="bi bi-check2"></i> Early Access Experimental Modules</li>
+            </ul>
+          </div>
+          <button class="btn-outline pricing-btn" data-track="tier-quantum">Request Access</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FEATURES -->
+  <section id="features" style="padding:6rem 2rem;border-top:1px solid var(--border)">
+    <div class="container">
+      <div class="section-tag">SYSTEM CAPABILITIES</div>
+      <h2 class="section-title">BUILT FOR SERIOUS<br><span>LONGEVITY OPERATORS</span></h2>
+      <div class="features-grid">
+        <div class="feat-card reveal" data-num="01"><span class="feat-icon">1</span><h3>Epigenetic Clock Mapping</h3><p>Benchmarks biological age against the Horvath and GrimAge epigenetic clocks — the gold standard in aging science — derived from facial photo data alone.</p></div>
+        <div class="feat-card reveal" data-num="02"><span class="feat-icon">2</span><h3>Cognitive Longevity Score</h3><p>Identifies early neurocognitive aging markers from periocular patterns and scleral clarity. Flags future cognitive decline risk up to 15 years in advance.</p></div>
+        <div class="feat-card reveal" data-num="03"><span class="feat-icon">3</span><h3>Precision Nutrition Engine</h3><p>AI-curated meal and supplementation protocols: exact caloric targets, macro ratios, micronutrient priorities, and fasting windows matched to your biology.</p></div>
+        <div class="feat-card reveal" data-num="04"><span class="feat-icon">4</span><h3>Monthly Progress Tracking</h3><p>Rescan monthly to measure biological age reversal. Track exactly how sleep, diet, stress and exercise shift your longevity trajectory over time.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="join" style="padding:5rem 0">
+    <div class="cta-section">
+      <div class="section-tag" style="justify-content:center">EARLY ACCESS</div>
+      <h2 class="section-title">JOIN THE<br><span>LONGEVITY NETWORK</span></h2>
+      <p>Get 3 months free when we launch. No credit card. No commitment. Be first in line for the full neural scan protocol.</p>
+      <div class="cta-form">
+        <input type="email" id="waitlistEmail" class="cta-input" placeholder="YOUR@EMAIL.COM">
+        <button id="enlistBtn" class="cta-btn">ENLIST</button>
+      </div>
+      <p class="cta-fine">// BY SIGNING UP YOU AGREE TO OUR TERMS &amp; PRIVACY POLICY</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-copy">// 2025 VITASPAN INC - PRODUCT DEMO</div>
+  </footer>
+
+  <script>
+    /* ── HAMBURGER ── */
+    function toggleMenu() {
+      const menu = document.getElementById('mobileMenu');
+      const btn  = document.getElementById('hamburger');
+      const open = menu.classList.toggle('open');
+      btn.classList.toggle('open', open);
+      document.body.style.overflow = open ? 'hidden' : '';
+    }
+    function closeMenu() {
+      document.getElementById('mobileMenu').classList.remove('open');
+      document.getElementById('hamburger').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    /* Close drawer on outside click */
+    document.addEventListener('click', e => {
+      const menu = document.getElementById('mobileMenu');
+      const btn  = document.getElementById('hamburger');
+      if (menu.classList.contains('open') && !menu.contains(e.target) && !btn.contains(e.target)) {
+        closeMenu();
+      }
+    });
+    /* Close on resize back to desktop */
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 900) closeMenu();
+    });
+
+    /* ── APP TABS ── */
+    function switchTab(name) {
+      ['home','scan','history','profile'].forEach(t => {
+        document.getElementById('tab-'+t).classList.remove('active');
+        document.getElementById('tab-btn-'+t).classList.remove('active');
+      });
+      document.getElementById('tab-'+name).classList.add('active');
+      document.getElementById('tab-btn-'+name).classList.add('active');
+      const scanBtnRow = document.getElementById('scanBtnRow');
+      scanBtnRow.style.display = name === 'scan' ? 'block' : 'none';
+      if (name === 'history') buildMiniChart();
+      if (name === 'home') animateHomeRing();
+    }
+
+    function animateHomeRing() {
+      const score = 78;
+      const fill  = document.getElementById('homeRingFill');
+      const num   = document.getElementById('homeRingNum');
+      const circ  = 2 * Math.PI * 22;
+      num.textContent = score;
+      setTimeout(() => { fill.style.strokeDashoffset = circ - (score / 100) * circ; }, 100);
+    }
+    window.addEventListener('load', () => animateHomeRing());
+
+    function buildMiniChart() {
+      const wrap = document.getElementById('miniChart');
+      if (wrap.dataset.built) return;
+      wrap.dataset.built = '1';
+      const scores = [63, 71, 75, 74, 75, 78];
+      const max    = 90;
+      const colors = ['#8b5cf6','#00a3b8','#00a86b','#d97706','#00a86b','#00a3b8'];
+      scores.forEach((s, i) => {
+        const bar = document.createElement('div');
+        bar.className = 'mini-bar';
+        const pct = (s / max) * 100;
+        bar.style.cssText = `height:0;background:${colors[i]};opacity:0.75;border-radius:3px 3px 0 0;flex:1;transition:height 0.7s ${i*0.1}s ease`;
+        wrap.appendChild(bar);
+        setTimeout(() => { bar.style.height = pct + '%'; }, 80);
+      });
+    }
+
+    let scanning = false;
+    function runScan() {
+      if (scanning) return;
+      scanning = true;
+      const mockFace = document.getElementById('mockFace');
+      if (mockFace) mockFace.style.opacity = '0.35';
+      const btn = document.getElementById('scanBtn');
+      btn.disabled = true;
+      btn.textContent = 'SCANNING...';
+      document.getElementById('scanStatus').style.display = 'none';
+      document.getElementById('scanProgress').style.display = 'block';
+      document.getElementById('scanLabel').textContent = 'SCANNING';
+      ['mc1','mc2','mc3','mc4'].forEach(id => document.getElementById(id).classList.remove('visible'));
+      ['mb1','mb2','mb3','mb4'].forEach(id => { document.getElementById(id).style.width='0'; });
+      document.getElementById('aiSuggestLabel').style.display = 'none';
+      document.getElementById('aiSuggestCard').classList.remove('visible');
+      document.getElementById('suggestList').innerHTML = '';
+      const steps = [
+        'INITIALIZING NEURAL ENGINE...',
+        'MAPPING FACIAL TOPOLOGY...',
+        'EXTRACTING VASCULAR PATTERNS...',
+        'COMPUTING EPIGENETIC MARKERS...',
+        'CROSS-REFERENCING 2M RECORDS...',
+        'GENERATING LONGEVITY PROFILE...',
+        'COMPILING AI SUGGESTIONS...'
+      ];
+      let i = 0;
+      const prog = document.getElementById('scanProgress');
+      const iv = setInterval(() => {
+        if (i < steps.length) { prog.textContent = steps[i++]; }
+        else { clearInterval(iv); showResults(); }
+      }, 520);
+    }
+
+    function showResults() {
+      const bioAge   = Math.floor(Math.random()*18)+28;
+      const lifespan = Math.floor(Math.random()*15)+81;
+      const score    = Math.floor(Math.random()*25)+63;
+      const cell     = Math.floor(Math.random()*28)+60;
+      const mockFace = document.getElementById('mockFace');
+      if (mockFace) mockFace.style.opacity = '0.85';
+      document.getElementById('scanProgress').style.display = 'none';
+      document.getElementById('scanStatus').style.display   = 'block';
+      document.getElementById('scanStatus').textContent     = 'SCAN COMPLETE';
+      document.getElementById('scanLabel').textContent      = 'ANALYSIS DONE';
+      [['mc1',0],['mc2',150],['mc3',300],['mc4',450]].forEach(([id,d]) => {
+        setTimeout(() => document.getElementById(id).classList.add('visible'), d);
+      });
+      setTimeout(()=>{ document.getElementById('mvBioAge').innerHTML=`${bioAge}<span class="unit">YRS</span>`; document.getElementById('mb1').style.width=`${(bioAge/110)*100}%`; }, 100);
+      setTimeout(()=>{ document.getElementById('mvLifespan').innerHTML=`${lifespan}<span class="unit">YRS</span>`; document.getElementById('mb2').style.width=`${(lifespan/120)*100}%`; }, 250);
+      setTimeout(()=>{ document.getElementById('mvScore').innerHTML=`${score}<span class="unit">/100</span>`; document.getElementById('mb3').style.width=`${score}%`; }, 400);
+      setTimeout(()=>{ document.getElementById('mvCell').innerHTML=`${cell}<span class="unit">%ILE</span>`; document.getElementById('mb4').style.width=`${cell}%`; }, 550);
+      setTimeout(() => {
+        document.getElementById('aiSuggestLabel').style.display = 'flex';
+        const card = document.getElementById('aiSuggestCard');
+        card.classList.add('visible');
+        let intro, suggestions;
+        if (score >= 80) {
+          intro = 'Strong longevity markers detected. Your epigenetic profile is in the top quartile. Focus on maintaining momentum and optimizing peak performance zones.';
+          suggestions = [
+            { badge: 'RECOVERY', cls: 'sb-green', text: 'Add 10-min cold exposure (10-15C) post-workout to reduce inflammatory markers detected in periocular region.' },
+            { badge: 'NUTRITION', cls: 'sb-cyan',  text: 'Introduce a 5-day Fasting Mimicking Diet cycle monthly. Your metabolic markers respond well to periodic caloric restriction.' },
+            { badge: 'SLEEP',    cls: 'sb-amber', text: 'Sleep tracking shows room for HRV improvement. Target 90-min sleep cycles and avoid screens 2h before bed.' }
+          ];
+        } else if (score >= 70) {
+          intro = 'Moderate longevity index with clear improvement potential. Vascular and cellular stress markers indicate lifestyle adjustments will yield measurable gains within 60 days.';
+          suggestions = [
+            { badge: 'MOVEMENT', cls: 'sb-cyan',  text: 'Prioritize Zone 2 cardio 4x per week (45 min). Your vascular density score rises fastest with sustained low-intensity aerobic work.' },
+            { badge: 'FASTING',  cls: 'sb-green', text: 'Begin 16:8 intermittent fasting. Your insulin sensitivity markers suggest a 12-18% biological age improvement within 3 months.' },
+            { badge: 'STRESS',   cls: 'sb-amber', text: 'Cortisol elevation detected in skin texture patterns. Add 4-7-8 breathwork sessions daily to lower systemic inflammation.' }
+          ];
+        } else {
+          intro = 'Elevated biological aging signals detected. Immediate lifestyle recalibration recommended. Your scan shows strong response potential.';
+          suggestions = [
+            { badge: 'URGENT',   cls: 'sb-amber', text: 'Reduce ultra-processed food intake to under 10% of calories. Inflammatory biomarker load is suppressing cellular repair cycles significantly.' },
+            { badge: 'SLEEP',    cls: 'sb-cyan',  text: 'Prioritize 7.5-8.5h sleep with consistent wake time. Sleep debt is the top driver of your accelerated biological aging score.' },
+            { badge: 'MOVEMENT', cls: 'sb-green', text: 'Start with daily 30-min walks before breakfast. Fasted movement activates AMPK pathways that directly counter your current aging rate.' }
+          ];
+        }
+        document.getElementById('aiIntro').textContent = intro;
+        const list = document.getElementById('suggestList');
+        suggestions.forEach((s, idx) => {
+          const el = document.createElement('div');
+          el.className = 'suggest-item';
+          el.innerHTML = `<span class="suggest-badge ${s.cls}">${s.badge}</span><span class="suggest-text">${s.text}</span>`;
+          list.appendChild(el);
+          setTimeout(() => el.classList.add('visible'), 200 + idx * 130);
+        });
+        setTimeout(() => {
+          const panel = document.getElementById('tab-scan');
+          panel.scrollTo({ top: panel.scrollHeight, behavior: 'smooth' });
+        }, 600);
+      }, 800);
+      const btn = document.getElementById('scanBtn');
+      setTimeout(() => { btn.disabled = false; btn.textContent = 'RESCAN BIOMETRICS'; scanning = false; }, 600);
+    }
+
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  </script>
+<script>
+  // Track pricing button clicks
+  document.querySelectorAll('.pricing-btn').forEach(button => {
+    button.addEventListener('click', (e) => {
+      const tierChosen = e.target.getAttribute('data-track');
+      const tierName = tierChosen.split('-')[1].toUpperCase();
+
+      gtag('event', 'pricing_click', {
+        event_category: 'Pricing',
+        event_label: tierChosen,
+        tier_name: tierName
+      });
+
+      alert(`Thank you for your interest in the ${tierName} plan! Our next network allocation opens soon.`);
+    });
+  });
+
+
+
+  // Track SCAN NOW button
+  document.querySelector('.nav-cta').addEventListener('click', () => {
+    gtag('event', 'scan_initiated', {
+      event_category: 'Engagement',
+      event_label: 'Nav Scan Button'
+    });
+  });
+</script>
+<script>
+ document.getElementById('enlistBtn').addEventListener('click', async () => {
+  gtag('event', 'waitlist_signup', {
+    event_category: 'Engagement',
+    event_label: 'Enlist Button'
+  });
+
+  const emailInput = document.getElementById('waitlistEmail');
+  const btn = document.getElementById('enlistBtn');
+  const email = emailInput.value.trim();
+
+  if (!email || !email.includes('@')) {
+    emailInput.style.borderColor = 'var(--red)';
+    setTimeout(() => emailInput.style.borderColor = '', 2000);
+    return;
+  }
+
+  btn.textContent = 'ENLISTING...';
+  btn.disabled = true;
+
+  try {
+    const res = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        access_key: 'f78d9ffa-9628-4285-b47f-cab97f5fa734',
+        subject: 'New VitaSpan Waitlist Signup',
+        email: email,
+        message: `New waitlist signup: ${email}`
+      })
+    });
+
+    const data = await res.json();
+
+    if (data.success) {
+      btn.textContent = 'ENLISTED ✓';
+      btn.style.background = 'var(--green)';
+      btn.style.clipPath = 'none';
+      emailInput.value = '';
+      emailInput.placeholder = 'YOU ARE IN THE NETWORK';
+      emailInput.disabled = true;
+    } else {
+      throw new Error('Failed');
+    }
+  } catch (err) {
+    btn.textContent = 'ERROR — RETRY';
+    btn.style.background = 'var(--red)';
+    btn.disabled = false;
+    setTimeout(() => {
+      btn.textContent = 'ENLIST';
+      btn.style.background = '';
+      btn.style.clipPath = '';
+    }, 3000);
+  }
+});
+</script>
+</body>
+</html>
